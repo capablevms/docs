@@ -1,0 +1,89 @@
+\documentclass[20pt]{beamer}
+
+%% \usepackage{Boadilla}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\lstset{
+  language=C,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\title{Capable VMs:\\ Review of CHERIvoke System}
+\author{Jeremy Singer}
+\date{27 Aug 2020}
+
+\begin{document}
+
+\begin{frame}
+  \includegraphics[width=3cm]{logo.png}
+  \titlepage
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is  `spatial memory safety'?}
+
+  \lstinputlisting{fake_pointer.c}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Compiler error}
+    \begin{block}{Output}Warning: cast from provenance-free integer type to pointer type will give pointer that can not be dereferenced\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is `temporal memory safety'?}
+
+  \begin{itemize}
+  \item Avoid \emph{use-after-free} for pointers
+  \item Bad sequences like:
+    \begin{itemize}
+    \item p $\leftarrow$ \texttt{malloc} ( \ldots )
+    \item \texttt{free} ( p )
+    \item use p later on \ldots
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{CHERIvoke provides temporal mem safety}
+  \begin{itemize}
+  \item enforced through capability mechanisms
+  \item evaluated in a `real' x86 architecture
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Paper to read}
+
+  \begin{itemize}
+  \item \url{https://doi.org/10.1145/3352460.3358288}
+  \item{CHERIvoke: Characterising Pointer Revocation using CHERI Capabilities for Temporal Memory Safety}
+  \item Xia \emph{et al}
+    \item MICRO-52, 2019
+  \end{itemize}
+   \end{frame}
+
+   \begin{frame}
+  \frametitle{Things to check out}
+     \begin{itemize}
+     \item instrumentation in \texttt{free}
+     \item a quarantine buffer
+     \item shadow map
+     \item periodic sweep through memory
+    \end{itemize}
+  
+
+\end{frame}
+
+
+
+\end{document}
