@@ -30,7 +30,7 @@ See how we use the ```bitmap``` data structure in https://github.com/jeremysinge
 It is feasible to use CHERI metadata facilities to encode general allocator metadata. For instance, in a segregated freelist allocator, the size of an allocated cell needs to be stored as part of the cell. In a traditional implementation, this size is stored in a hidden field in the allocated cell. In a CHERI implementation, the size could be stored directly
 in the capability bounds information. (This assumes that the memory allocator client will preserve the unmodified capability value to pass to the corresponding ```free``` call.
 
-See this approach in https://github.com/jeremysinger/cheri-examples/blob/freelist_alloc_example/example_allocators/freelist_allocator/freelist_allocator.h with the ```GET_SIZE``` and ```SET_SIZE``` macros.
+See this approach in https://github.com/capablevms/cheri-examples/blob/master/example_allocators/freelist_allocator/freelist_allocator.h with the ```GET_SIZE``` and ```SET_SIZE``` macros.
 
 
 ## Does ```malloc``` Need API Changes?
