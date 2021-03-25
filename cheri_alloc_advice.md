@@ -12,7 +12,7 @@ Because a capability occupies 128 bits / 16 bytes (only twice the raw pointer wi
 * some addresses need to be rounded (so the base value is capability-aligned)
 * some capabilities have imprecise bounds (ideally we should overestimate bounds to avoid multiple independent capability ranges intersecting)
 
-There are compiler intrinsics like ```cheri_representable_alignment_mask(sizet len)```  that allow us to increase the alignment of an allocation so base and bounds can be precise. This is what we used in a simple bump pointer allocator implementation at https://github.com/capablevms/cheri-examples/blob/master/example_allocators/bump_allocator/bump_alloc.c 
+There are compiler intrinsics like ```cheri_representable_alignment_mask(size_t len)```  that allow us to increase the alignment of an allocation so base and bounds can be precise. This is what we used in a simple bump pointer allocator implementation at https://github.com/capablevms/cheri-examples/blob/master/example_allocators/bump_allocator/bump_alloc.c 
 
 Observation: for memory allocations that are smaller than 4KiB, bounds are *precise* so we can have a special-case fast path that avoids alignment checks and re-calculations.
 
