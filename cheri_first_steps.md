@@ -4,7 +4,7 @@ Some easy steps to get you up and running with CHERI.
 
 ## Building CHERI and your Knowledge about it
 
-Before you start, create the following config file in `~/.config/cheribsd.json`
+Before you start, create the following config file in `~/.config/cheribuild.json`
 (change the ports according to your needs): 
 
 ```
