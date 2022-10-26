@@ -28,6 +28,14 @@ reading these in order:
    which can be found here: [techreports]. There you can also find the [Introduction To CHERI]
    (which isn't a very good place to start).
 
+## Additional resources
+  - Arm's [Capinfo], a nifty tool for visualizing capabilities
+  - Arm's [Morello Prototype Architecture Overview]
+  - [Morello extensions to Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)]
+  - [Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)]
+  - If you wish to learn AArch64 assembly, [Learn the architecture - AArch64 Instruction Set
+    Architecture] is a good starting point
+
 [CHERI Instruction-Set Architecture]: https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-951.pdf
 [CHERI C/C++ Programming Guide]: https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-947.pdf
 [llvm header files]: https://github.com/CTSRD-CHERI/llvm-project/blob/master/clang/lib/Headers/cheriintrin.h
@@ -37,3 +45,11 @@ reading these in order:
 [Introduction To CHERI]: https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-941.pdf
 [Efficient Tagged Memory]: https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201711-iccd2017-efficient-tags.pdf
 [techreports]: https://www.cl.cam.ac.uk/techreports
+[Capinfo]: https://www.morello-project.org/capinfo
+[Morello Prototype Architecture Overview]: https://developer.arm.com/documentation/den0133/0100?lang=en
+[Morello extensions to Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)]:
+https://github.com/ARM-software/abi-aa/blob/60a8eb8c55e999d74dac5e368fc9d7e36e38dda4/aaelf64-morello/aaelf64-morello.rst
+[Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)]:
+https://github.com/ARM-software/abi-aa/blob/60a8eb8c55e999d74dac5e368fc9d7e36e38dda4/aapcs64-morello/aapcs64-morello.rst
+[Learn the architecture - AArch64 Instruction Set Architecture]:
+https://developer.arm.com/documentation/102374/0100
